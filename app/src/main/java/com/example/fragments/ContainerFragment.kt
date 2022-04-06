@@ -37,12 +37,9 @@ class ContainerFragment: Fragment() {
         if (firstFragment == null && secondFragment == null) {
             childFragmentManager.commit {
                 replace<AlterNumFragment>(R.id.fragment_first, "FirstFragment")
-                addToBackStack(null)
-
             }
             childFragmentManager.commit {
                 replace<AlterNumFragment>(R.id.fragment_second, "SecondFragment")
-                addToBackStack(null)
             }
         }
     }

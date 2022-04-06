@@ -40,11 +40,7 @@ class DetailFragment: Fragment() {
 
         toolbar?.setNavigationIcon(R.drawable.ic_baseline_arrow_back_24)
         toolbar?.setNavigationOnClickListener {
-            Log.d("DetailFragment", "click ")
-            val bundle = bundleOf(
-                "num" to num
-            )
-            parentFragmentManager.popBackStackImmediate(R.id.fragment_first, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+            parentFragmentManager.popBackStackImmediate()
         }
         textNum?.text = num.toString()
     }

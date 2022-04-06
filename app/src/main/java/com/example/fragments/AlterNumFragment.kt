@@ -75,6 +75,7 @@ class AlterNumFragment: Fragment(), View.OnClickListener {
                 )
                 parentFragmentManager.commit {
                     replace<DetailFragment>(fragmentId, args = bundle)
+                    addToBackStack(null)
                 }
             }
         }
