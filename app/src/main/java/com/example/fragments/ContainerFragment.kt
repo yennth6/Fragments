@@ -24,12 +24,12 @@ class ContainerFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         Log.d(TAG, "onCreateView")
-
         return inflater.inflate(R.layout.fragment_container, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        Log.d(TAG, "onViewCreated")
         val firstFragment: AlterNumFragment? = childFragmentManager
             .findFragmentByTag("FirstFragment") as AlterNumFragment?
         val secondFragment: AlterNumFragment? = childFragmentManager
@@ -57,5 +57,34 @@ class ContainerFragment: Fragment() {
             Log.d(TAG, "null")
         }
         return  sum
+    }
+    override fun onStart() {
+        super.onStart()
+        Log.d(TAG, "onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG, "onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d(TAG, "onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG, "onStop")
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        Log.d(TAG, "onDestroyView")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, "onDestroy")
     }
 }

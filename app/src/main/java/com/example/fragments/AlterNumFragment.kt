@@ -26,6 +26,7 @@ class AlterNumFragment: Fragment(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d(TAG, "onCreate")
     }
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,6 +40,7 @@ class AlterNumFragment: Fragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        Log.d(TAG, "onViewCreated")
         textNum = getView()?.findViewById(R.id.textview_number) as TextView
         buttonAdd = getView()?.findViewById(R.id.button_add) as Button
         buttonMinus = getView()?.findViewById(R.id.button_minus) as Button
@@ -89,5 +91,35 @@ class AlterNumFragment: Fragment(), View.OnClickListener {
         outState.putInt("num", num)
         Log.d(TAG, "saveInstanceState")
         super.onSaveInstanceState(outState)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d(TAG, "onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG, "onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d(TAG, "onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG, "onStop")
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        Log.d(TAG, "onDestroyView")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, "onDestroy")
     }
 }
